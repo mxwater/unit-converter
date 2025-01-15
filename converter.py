@@ -1,15 +1,10 @@
-def main():
-    print("Welcome to the Unit Converter App!")
-    print("1. Convert Temperature (F to C)")
-    print("2. Convert Weight (lbs to kg)")
-    print("3. Convert Volume (oz to ml)")
-    print("4. Convert Distance (miles to km)")
-    print("5. Exit")
-    choice = input("Select an option: ")
-    print(f"You selected option {choice}")
 
-if __name__ == "__main__":
-    main()
+
+def convert_weight():
+    print("\nConvert Weight: Pounds to Kilograms")
+    weight_lbs = float(input("Enter weight in pounds: "))
+    weight_kg = weight_lbs * 0.453592
+    print(f"{weight_lbs} lbs is {weight_kg:.2f} kg")
 
 def convert_temperature():
     print("\nConvert Temperature: Fahrenheit to Celsius")
