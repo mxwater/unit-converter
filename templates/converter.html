@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Unit Converter</h1>
+    <form action="/convert" method="post">
+        <label for="value">Enter Value:</label>
+        <input type="number" step="any" id="value" name="value" required>
+        <br><br>
+        <label for="conversion_type">Choose Conversion:</label>
+        <select id="conversion_type" name="conversion_type" required>
+            <option value="temperature">Temperature (F to C)</option>
+            <option value="weight">Weight (lbs to kg)</option>
+            <option value="volume">Volume (oz to ml)</option>
+            <option value="distance">Distance (miles to km)</option>
+        </select>
+        <br><br>
+        <button type="submit">Convert</button>
+    </form>
+
+    {% if result %}
+        <h2>Result:</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
