@@ -1,3 +1,7 @@
+from flask import Flask, request, render_template
+
+app = Flask(__name__)
+
 def convert_temperature():
     print("\nConvert Temperature: Fahrenheit to Celsius")
     temp_f = float(input("Enter temperature in Fahrenheit: "))
