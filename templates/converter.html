@@ -1,69 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    
-        <script src="https://cdn.tailwindcss.com"></script>
-    
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Unit Converter</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            max-width: 600px;
-            margin: auto;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        form {
-            margin-bottom: 20px;
-        }
-        input, select, button {
-            padding: 10px;
-            margin: 10px;
-            font-size: 16px;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        p {
-            font-size: 18px;
-            font-weight: bold;
-        }
-    </style>
 </head>
-<body>
-    <h1>Unit Converter</h1>
-    <form action="/convert" method="post">
-        <label for="value">Enter Value:</label>
-        <input type="number" step="any" id="value" name="value" required>
-        <br><br>
-        <label for="conversion_type">Choose Conversion:</label>
-        <select id="conversion_type" name="conversion_type" required>
-            <option value="temperature">Temperature (F to C)</option>
-            <option value="weight">Weight (lbs to kg)</option>
-            <option value="volume">Volume (oz to ml)</option>
-            <option value="distance">Distance (miles to km)</option>
-        </select>
-        <br><br>
-        <button type="submit">Convert</button>
-    </form>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-    {% if result %}
-        <h2>Result:</h2>
-        <p>{{ result }}</p>
-    {% endif %}
+    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center text-blue-600">Unit Converter</h1>
+
+        <form method="POST" action="/convert" class="mt-6">
+            <label class="block text-gray-700 font-medium">Select Conversion Type:</label>
+            <select name="conversion_type" class="w-full p-2 border rounded-lg mt-2">
+                <option value="temperature">Temperature (°F → °C)</option>
+                <option value="weight">Weight (lbs → kg)</option>
+                <option value="volume">Volume (oz → ml)</option>
+                <option value="distance">Distance (miles → km)</option>
+            </select>
+
+            <label class="block text-gray-700 font-medium mt-4">Enter Value:</label>
+            <input type="number" name="value" step="any" required class="w-full p-2 border rounded-lg mt-2">
+
+            <button type="submit" class="w-full mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-lg">
+                Convert
+            </button>
+        </form>
+
+        {% if result %}
+        <div class="mt-6 p-4 bg-green-100 text-green-700 border-l-4 border-green-500">
+            <p class="font-medium">{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+
 </body>
 </html>
