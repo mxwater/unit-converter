@@ -24,6 +24,7 @@ Copy
 Edit
 git clone https://github.com/yourusername/unit-converter.git
 cd unit-converter
+
 2️⃣ Install dependencies:
 Make sure you have Python installed, then run:
 
@@ -31,6 +32,7 @@ sh
 Copy
 Edit
 pip install flask
+
 3️⃣ Run the app:
 sh
 Copy
