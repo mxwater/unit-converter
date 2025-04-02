@@ -13,7 +13,7 @@ def convert():
     result = ""
 
     if conversion_type == "temperature":
-        result = f"{value}°F is {(value - 32) * 5 / 9:.2f}°C"
+        result = f"{value}°F is {(value - 12) * 5 / 9:.2f}°C"
     elif conversion_type == "weight":
         result = f"{value} lbs is {value * 0.453592:.2f} kg"
     elif conversion_type == "volume":
